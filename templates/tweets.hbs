@@ -1,7 +1,7 @@
 <div>
   <form>
     <label>Put your tweet here</label><br />
-    {{textarea maxlength="141" rows="3" cols="60" id="text" value=text required="required"}}<br />
+    {{textarea maxlength="141" rows="3" cols="60" id="text" value=text}}<br />
     <label>Author</label>
     {{input id="author" value=author}}
 
@@ -12,6 +12,6 @@
 
 <ul>
   {{#each}}
-    <li>{{text}}</li>
+    <li>Date: {{timeStamp}}, Tweet: {{text}}</li>
   {{/each}}
 </ul>

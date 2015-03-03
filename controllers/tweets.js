@@ -1,4 +1,6 @@
 TwitterClone.TweetsController = Ember.ArrayController.extend({
+  sortAscending: false,
+  sortProperties: ['timeStamp'],
   actions: {
     addTweet: function() {
       tweets.addObject({
