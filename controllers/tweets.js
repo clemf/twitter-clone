@@ -9,8 +9,7 @@ TwitterClone.TweetsController = Ember.ArrayController.extend({
         id: tweets.length + 1,
         author: this.get("author"),
         text: this.get("text"),
-        timeStamp: new Date,
-        shown: false
+        timeStamp: new Date
       });
       this.set("text", "");
       this.set("author", "");

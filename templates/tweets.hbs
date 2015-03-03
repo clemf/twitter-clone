@@ -15,10 +15,11 @@
 <br />
 <ul class="list-group">
   {{#each controller}}
-    {{shown}}
-    <a {{action "toggleShown"}}><li class="list-group-item">{{author}}: {{text}}</li></a>
+    <span {{action "toggleShown"}}><li class="list-group-item">{{author}}: {{text}}</li></span>
     {{#if shown}}
-      {{timeStamp}}
+      <div class="well" {{action "toggleShown"}}>
+        {{timeStamp}}
+      </div>
     {{/if}}
 
   {{/each}}
