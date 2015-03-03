@@ -1,14 +1,17 @@
+<div>
+  <form>
+    <label>Put your tweet here</label><br />
+    {{textarea maxlength="141" rows="3" cols="60" id="text" value=text required="required"}}<br />
+    <label>Author</label>
+    {{input id="author" value=author}}
+
+    <button class="btn"{{action "addTweet"}}>Add tweet</button>
+  </form>
+</div>
+
+
 <ul>
   {{#each}}
     <li>{{text}}</li>
   {{/each}}
 </ul>
-
-<form>
-  <label>Put your tweet here</label>
-  {{input id="text" value=text}}
-
-  <label>Author</label>
-  {{input id="author" value=author}}
-  <button {{action "addTweet"}}>Add</button>
-</form>
