@@ -13,12 +13,13 @@
 </div>
 
 <br />
-
 <ul class="list-group">
-  {{#each}}
-    <a {{action "showDetails"}}><li class="list-group-item">{{author}}: {{text}}</li></a>
-    {{#if showDetails}}
+  {{#each controller}}
+    {{shown}}
+    <a {{action "toggleShown"}}><li class="list-group-item">{{author}}: {{text}}</li></a>
+    {{#if shown}}
       {{timeStamp}}
     {{/if}}
+
   {{/each}}
 </ul>
