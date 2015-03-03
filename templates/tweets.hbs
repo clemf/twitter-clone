@@ -1,17 +1,24 @@
 <div>
   <form>
-    <label>Put your tweet here</label><br />
-    {{textarea maxlength="141" rows="3" cols="60" id="text" value=text}}<br />
-    <label>Author</label>
-    {{input id="author" value=author}}
-
-    <button class="btn"{{action "addTweet"}}>Add tweet</button>
+    <div class="form-group">
+      <label for="author">Author</label>
+      {{input id="author" value=author class="form-control"}}
+    </div>
+    <div class="form-group">
+      <label for="text">Put your tweet here</label>
+      {{textarea maxlength="141" rows="3" cols="60" id="text" value=text  class="form-control"}}
+    </div>
+    <button class="btn btn-default"{{action "addTweet"}}>Add tweet</button>
   </form>
 </div>
 
+<br />
 
-<ul>
+<ul class="list-group">
   {{#each}}
-    <li>Date: {{timeStamp}}, Tweet: {{text}}</li>
+    <a {{action "showDetails"}}><li class="list-group-item">{{author}}: {{text}}</li></a>
+    {{#if showDetails}}
+      {{timeStamp}}
+    {{/if}}
   {{/each}}
 </ul>
