@@ -3,3 +3,12 @@
     <li>{{text}}</li>
   {{/each}}
 </ul>
+
+<form>
+  <label>Put your tweet here</label>
+  {{input id="text" value=text}}
+
+  <label>Author</label>
+  {{input id="author" value=author}}
+  <button {{action "addTweet"}}>Add</button>
+</form>
