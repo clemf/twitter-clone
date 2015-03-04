@@ -17,7 +17,7 @@
   {{#each controller}}
     <span {{action "toggleShown"}}><li class="list-group-item">{{author}}: {{text}}</li></span>
     {{#if shown}}
-      <div class="well" {{action "toggleShown"}}>
+      <div class="well">
         {{timeStamp}}
         <h4>Comments:</h4>
         <ul class="list-group">
@@ -25,6 +25,11 @@
             <li class="list-group-item">{{comment}}</li>
           {{/each}}
         </ul>
+        <form>
+          <label for="comment">Comment</label>
+          {{textarea value=comment class="form-control"}}
+          <button {{action "addComment"}} class="btn btn-default">Submit</button>
+        </form>
       </div>
     {{/if}}
 
