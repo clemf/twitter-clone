@@ -19,6 +19,12 @@
     {{#if shown}}
       <div class="well" {{action "toggleShown"}}>
         {{timeStamp}}
+        <h4>Comments:</h4>
+        <ul class="list-group">
+          {{#each comment in comments}}
+            <li class="list-group-item">{{comment}}</li>
+          {{/each}}
+        </ul>
       </div>
     {{/if}}
 
